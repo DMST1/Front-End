@@ -14,8 +14,8 @@ export default function App() {
           <Route path="/" component={homepage}></Route>
           {/* <Route path="resources" component={resources}></Route>
           <Route path="about" component={about}></Route>*/}
-          <Route path="/registration" component={FormPage2}></Route>
-          <Route path="/login" component={FormPage1}></Route>
+          <Route path="/registration" component={FormPage2} />
+          <Route path="/login" component={FormPage1} />
         </div>  
       </header>
     </div>

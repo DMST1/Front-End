@@ -1,5 +1,14 @@
 import React from "react";
-import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBInput, MDBIcon, MDBBtn } from 'mdbreact';
+import { 
+  MDBContainer, 
+  MDBRow, 
+  MDBCol, 
+  MDBCard, 
+  MDBCardBody, 
+  MDBInput, 
+  MDBIcon, 
+  MDBBtn } 
+  from 'mdbreact';
 
 const FormPage2 = () => {
   return (

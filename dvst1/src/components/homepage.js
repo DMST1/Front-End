@@ -12,7 +12,7 @@ export default function homepage() {
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/resources">Resources</Link></li>
                     <li><Link to="/about">About Us</Link></li>
-                    <li><Link to="/register">Register</Link></li>
+                    <li><Link to="/registration">Register</Link></li>
                     <li><Link to="/login">login</Link></li>
                 </ul>
               </div>
