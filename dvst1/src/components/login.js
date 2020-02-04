@@ -1,71 +1,91 @@
-import React from "react";
+import React, { useState } from "react";
 import {
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBCard,
-  MDBCardBody,
-  MDBModalFooter,
-  MDBIcon,
-  MDBCardHeader,
-  MDBBtn,
-  MDBInput
+	MDBContainer,
+	MDBRow,
+	MDBCol,
+	MDBCard,
+	MDBCardBody,
+	MDBModalFooter,
+	MDBIcon,
+	MDBCardHeader,
+	MDBBtn,
+	MDBInput
 } from "mdbreact";
 
 const FormPage1 = () => {
-  return (
-    <MDBContainer>
-      <MDBRow>
-        <MDBCol md="6">
-          <MDBCard>
-            <MDBCardBody>
-              <MDBCardHeader className="form-header deep-blue-gradient rounded">
-                <h3 className="my-3">
-                  <MDBIcon icon="lock" /> Login:
-                </h3>
-              </MDBCardHeader>
-              <form>
-                <div className="grey-text">
-                  <MDBInput
-                    label="Type your email"
-                    icon="envelope"
-                    group
-                    type="email"
-                    validate
-                    error="wrong"
-                    success="right"
-                  />
-                  <MDBInput
-                    label="Type your password"
-                    icon="lock"
-                    group
-                    type="password"
-                    validate
-                  />
-                </div>
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
 
-              <div className="text-center mt-4">
-                <MDBBtn
-                  color="light-blue"
-                  className="mb-3"
-                  type="submit"
-                >
-                  Login
-                </MDBBtn>
-              </div>
-              </form>
-              <MDBModalFooter>
-                <div className="font-weight-light">
-                  <p>Not a member? Sign Up</p>
-                  <p>Forgot Password?</p>
-                </div>
-              </MDBModalFooter>
-            </MDBCardBody>
-          </MDBCard>
-        </MDBCol>
-      </MDBRow>
-    </MDBContainer>
-  );
+	const emailHandler = e => {
+		e.preventDefault();
+		setEmail(e.target.value);
+	};
+
+	const passwordHandler = e => {
+		e.preventDefault();
+		setPassword(e.target.value);
+	};
+
+	const handleSubmit = e => {
+		e.preventDefault();
+		let credentials = {
+			email: email,
+			password: password
+		};
+		localStorage.setItem("credentials", credentials);
+	};
+
+	return (
+		<MDBContainer>
+			<MDBRow>
+				<MDBCol md="6">
+					<MDBCard>
+						<MDBCardBody>
+							<MDBCardHeader className="form-header deep-blue-gradient rounded">
+								<h3 className="my-3">
+									<MDBIcon icon="lock" /> Login:
+								</h3>
+							</MDBCardHeader>
+							<form onSubmit={handleSubmit}>
+								<div className="grey-text">
+									<MDBInput
+										label="Type your email"
+										icon="envelope"
+										type="email"
+										error="wrong"
+										success="right"
+										value={email}
+										onChange={emailHandler}
+									/>
+									<MDBInput
+										label="Type your password"
+										icon="lock"
+										type="password"
+										value={password}
+										onChange={passwordHandler}
+									/>
+								</div>
+
+								<div className="text-center mt-4">
+									<MDBBtn color="light-blue" className="mb-3" type="submit">
+										Login
+									</MDBBtn>
+								</div>
+							</form>
+							<MDBModalFooter>
+								<div className="font-weight-light">
+									<p>
+										Not a member? <a href="/registration">Sign Up</a>
+									</p>
+									<p>Forgot Password?</p>
+								</div>
+							</MDBModalFooter>
+						</MDBCardBody>
+					</MDBCard>
+				</MDBCol>
+			</MDBRow>
+		</MDBContainer>
+	);
 };
 
 export default FormPage1;
