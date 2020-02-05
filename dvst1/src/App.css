@@ -14,14 +14,14 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #fbfbfd;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #73CEC5;
 }
 
 .App-link {
@@ -35,4 +35,43 @@
   to {
     transform: rotate(360deg);
   }
+}
+.mainNav{
+  margin: 2px;
+  width: 60rem;
+}
+.mainNav ul li{
+    text-decoration: none;
+    color: #fff;
+}
+ul li {
+  list-style: none;
+  display: inline;
+  margin: 10px 30px;
+}
+li {
+  color: #73CEC5
+}
+.main-img {
+  display: block;
+  /* border-radius: 100%; */
+  margin: 0 auto;
+  align-content: center;
+  border: 4px solid #73CEC5;
+  height: 450px;
+}
+.my-3 {
+  color: #F09B9B
+}
+.grey-text label {
+  color: #F09B9B;
+}
+.font-weight-light {
+  color: #F09B9B;
+}
+.font-weight-light a {
+  color: #73CEC5;
+}
+.blue-text {
+  color: #F09B9B;
 }

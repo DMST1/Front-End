@@ -12,7 +12,7 @@ export default function App() {
 				<div className="navLinks">
 					<Homepage />
 					{/* <Route path="resources" component={resources}></Route>
-          <Route path="about" component={about}></Route>*/}
+          			<Route path="about" component={about}></Route> */}
 					<Route path="/registration" component={FormPage2} />
 					<Route path="/login" component={FormPage1} />
 				</div>
