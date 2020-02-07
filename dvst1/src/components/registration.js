@@ -106,5 +106,60 @@ const FormPage2 = () => {
 		</MDBContainer>
 	);
 };
+function createNode(element) {
+	return document.createElement(element);
+}
+
+function append(parent, el) {
+  return parent.appendChild(el);
+}
+
+const ul = document.getElementById('users');
+const url = 'https://dvcalculator.herokuapp.com/api/auth/register';
+fetch(url)
+.then((resp) => resp.json())
+.then(function(data) {
+  let users = data.results;
+  return users.map(function(user) {
+	let li = createNode('li'),
+		img = createNode('img'),
+		span = createNode('span');
+	img.src = user.picture.medium;
+	span.innerHTML = `${user.name.first} ${user.name.last}`;
+	append(li, img);
+	append(li, span);
+	append(ul, li);
+  })
+})
+.catch(function(error) {
+  console.log(error);
+});   
+
+//     const url = 'https://dvcalculator.herokuapp.com/api/auth/register';
+// let data = {
+//     name: 'Sara'
+// }
+
+// let fetchData = { 
+//     method: 'POST', 
+//     body: data,
+//     headers: new Headers()
+// }
+// fetch(url, fetchData)
+// .then(function() {
+// });
+// const url = 'https://dvcalculator.herokuapp.com/api/auth/register';
+// let data = {
+// name: 'Sara'
+// }
+// var request = new Request(url, {
+// method: 'POST', 
+// body: data, 
+// headers: new Headers()
+// });
+
+// fetch(request)
+// .then(function() {
+// })
 
 export default FormPage2;

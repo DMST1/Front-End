@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 export default function Homepage() {
 	return (
 		<section className="home-page">
@@ -15,13 +16,13 @@ export default function Homepage() {
 							<Link to="/resources">Resources</Link>
 						</li>
 						<li>
-							<Link to="/about">About Us</Link>
-						</li>
-						<li>
 							<Link to="/registration">Register</Link>
 						</li>
 						<li>
 							<Link to="/login">login</Link>
+						</li>
+						<li>
+							<Link to="/accountpage">Account</Link>
 						</li>
 					</ul>
 				</div>

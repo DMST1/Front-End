@@ -12,6 +12,7 @@ import {
 	MDBInput
 } from "mdbreact";
 
+
 const FormPage1 = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -68,7 +69,7 @@ const FormPage1 = () => {
 
 								<div className="text-center mt-4">
 									<MDBBtn color="light-blue" className="mb-3" type="submit">
-										Login
+									Login
 									</MDBBtn>
 								</div>
 							</form>
@@ -87,5 +88,28 @@ const FormPage1 = () => {
 		</MDBContainer>
 	);
 };
+var attempt = 3; // Variable to count number of attempts.
+// Below function Executes on click of login button.
+function validate(){
+var email = document.getElementById("email").value;
+var password = document.getElementById("password").value;
+if ( email == "Dessa.goodlett2019@gmail.com" && password == "Brooke10!"){
+alert ("Login successfully");
+window.location = "success.html"; // Redirecting to other page.
+return false;
+}
+else{
+attempt --;// Decrementing by one.
+alert("You have left "+attempt+" attempt;");
+// Disabling fields after 3 attempts.
+if( attempt == 0){
+document.getElementById("email").disabled = true;
+document.getElementById("password").disabled = true;
+document.getElementById("Login").disabled = true;
+return false;
+		}
+	}
+}
+
 
 export default FormPage1;
