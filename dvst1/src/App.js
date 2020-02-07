@@ -23,9 +23,16 @@ export default function App() {
 					<Route path="/monthly" component={monthly}></Route>
 				</div>
 			</header>
-			<footer>
-			
-			</footer>
+			<div className="vision">
+				<p>
+				Our mission is to create pathways
+				to financial security and long-term safety that 
+				support survivors of sex-based violence.<br></br>
+				Our goal is not just survival but safety.
+				Our goal is not just living but thriving. 
+				Our goal is not just making ends meet 
+				but creating wealth and abundance.</p>
+			</div>
 		</div>
 	);
 }
